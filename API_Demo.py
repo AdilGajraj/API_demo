@@ -43,13 +43,13 @@ header_list = [sheet['A1'], sheet['B1']]
 for header in header_list:
     header.font = Font(bold = True)
 # Loop through the columns
-for i in range(len(header_list)):
-    # Change the font to bold
-
-# Loop through data from API
-for x in "Name":
-    print(x)
-    # fill the cell values with appropriate data
+    for i in range(len(header_list)):
+        id = clean_data[i]['id']
+        name = clean_data[i]['name']
+        # Assign the data to the spreadsheet
+        sheet.cell(row = i+2, column = 1).value = id
+        sheet.cell(row = i+2, column = 2).value = name
+# fill the cell values with appropriate data
 
 # Save the workbook
 wb.save('API Demo.xlsx')
